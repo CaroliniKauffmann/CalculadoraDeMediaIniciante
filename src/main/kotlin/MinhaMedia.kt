@@ -1,5 +1,3 @@
-import java.util.*
-
 fun main() {
 
     val aluno = Aluno()
@@ -9,6 +7,6 @@ fun main() {
     aluno.preencherNotas(4)
 
     aluno.mostrarResultadoMedia()
-    aluno.verificarAprovacao()
+    aluno.verificarAprovacao(7)
 
 }

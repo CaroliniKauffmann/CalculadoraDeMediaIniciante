@@ -1,12 +1,14 @@
 import java.util.*
 import kotlin.collections.ArrayList
 
-class Aluno() {
-    val leia = Scanner(System.`in`)
 
-    var nome = "string"
-    var ano = 0
-    var notas: ArrayList<Float> = ArrayList()
+class Aluno {
+    private val leia = Scanner(System.`in`)
+
+    private var nome = "string"
+    private var ano = 0
+    private var notas: ArrayList<Float> = ArrayList()
+
 
     fun preencherNome(){
         println("Preencha seu nome:  ")
@@ -28,7 +30,7 @@ class Aluno() {
 
     }
 
-    fun calcularMedia(): Float {
+    private fun calcularMedia(): Float {
         val totalDeNotas = notas.size
         val soma = notas.sum()
         return soma / totalDeNotas
@@ -38,8 +40,8 @@ class Aluno() {
         println("Aluno: $nome, do ano $ano, teve a média ${calcularMedia()}")
     }
 
-    fun verificarAprovacao() {
-        if (calcularMedia() >= 7) {
+    fun verificarAprovacao(mediaAprovacao:Int) {
+        if (calcularMedia() >= mediaAprovacao) {
             println("Você foi aprovado!")
         } else {
             println("Você foi reprovado!")
